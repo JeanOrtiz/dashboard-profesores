@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span routerLink="/home">Lista de Estudiantes</span>
+    <button
+      routerLink="/grades"
+      mat-stroked-button
+      color="light"
+      style="margin-left: 25px"
+    >
+      Calificaciones
+    </button>
+    <button
+      routerLink="/subjects"
+      mat-stroked-button
+      color="light"
+      style="margin-left: 25px"
+    >
+      Materias
+    </button>
+    <button
+      routerLink="/attendance"
+      mat-stroked-button
+      color="light"
+      style="margin-left: 15px"
+    >
+      Asistencia
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

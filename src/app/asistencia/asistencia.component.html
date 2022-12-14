@@ -1,0 +1,89 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between">
+    <h1 class="display-4">Historial de asistencias</h1>
+    <button class="btn btn-outline-primary" (click)="openDialog()">
+      Nueva asistencia
+    </button>
+  </div>
+  <hr />
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card mt-2">
+        <div class="card-header p-3">
+          <div *ngIf="attendanceRecords.length > 0; else noRecords">
+            <!-- <div> -->
+            <cdk-accordion class="row" class="example-accordion">
+              <cdk-accordion-item class *ngFor="let record of attendanceRecords; let index = index;"
+                #accordionItem="cdkAccordionItem" class="example-accordion-item col-md-12" role="button" tabindex="0"
+                [attr.id]="'accordion-header-' + index" [attr.aria-expanded]="accordionItem.expanded"
+                [attr.aria-controls]="'accordion-body-' + index">
+                <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+                  <h3>{{ record.date | date }} - {{ record.students.length }} estudiantes presentes <span
+                      style="float: right; padding-left: 50px" class="example-accordion-item-description">
+                      Click para {{ accordionItem.expanded ? 'cerrar' : 'abrir' }}
+                    </span></h3>
+
+                </div>
+                <div class="example-accordion-item-body" role="region"
+                  [style.display]="accordionItem.expanded ? '' : 'none'" [attr.id]="'accordion-body-' + index"
+                  [attr.aria-labelledby]="'accordion-header-' + index">
+                  <mat-selection-list #studentsInput>
+                    <mat-list-option *ngFor="let student of record.students" [value]="student._id" selected disabled>
+                      {{ student.fullname }}
+                    </mat-list-option>
+                  </mat-selection-list>
+                </div>
+              </cdk-accordion-item>
+            </cdk-accordion>
+
+            <!-- </div> -->
+            <div class="col-md-3">
+              <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+            </div>
+          </div>
+          <ng-template #noRecords>
+            <div>
+              <h4 class="text-center">No hay asistencias para mostrar</h4>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button #modalTrigger [hidden]="true" type="button" class="btn btn-primary" data-toggle="modal"
+  data-target="#student-modal">
+  Nueva asistencia
+</button>
+
+<div class="modal" id="student-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Asistencia</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <mat-selection-list #studentsInput>
+          <mat-list-option *ngFor="let student of students" [value]="student._id" [selected]="student.present">
+            {{ student.fullname }}
+          </mat-list-option>
+        </mat-selection-list>
+
+        <p class="text-muted mt-4">
+          Estudiantes presentes: {{ studentsInput.selectedOptions.selected.length }}
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Cerrar
+        </button>
+        <button (click)="saveAttendance()" type="button" class="btn btn-primary">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
