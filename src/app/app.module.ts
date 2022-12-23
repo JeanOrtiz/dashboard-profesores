@@ -7,15 +7,15 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { NgMDatatableModule } from "mateh-ng-m-datatable";
 import { HttpClientModule } from "@angular/common/http";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatDialogModule } from "@angular/material/dialog";
 import { DialogComponent } from "./components/dialog/dialog.component";
 import { MatButtonModule } from "@angular/material/button";
-import { CalificacionesComponent } from "./calificaciones/calificaciones.component";
 import { AsistenciaComponent } from "./asistencia/asistencia.component";
 import { SubjectsComponent } from "./subjects/subjects.component";
+import { CalificationsComponent } from "./calificaciones/calificaciones.component";
 import { HomeComponent } from "./home/home.component";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
@@ -27,9 +27,9 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
   declarations: [
     AppComponent,
     DialogComponent,
-    CalificacionesComponent,
     AsistenciaComponent,
     SubjectsComponent,
+    CalificationsComponent,
     HomeComponent,
   ],
   imports: [
@@ -48,8 +48,11 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
     MatGridListModule,
     RouterModule,
     AppRoutingModule,
-    MatIconModule
-  ],
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule ],
+    
   providers: [],
   bootstrap: [AppComponent],
 })

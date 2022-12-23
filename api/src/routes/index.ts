@@ -4,6 +4,8 @@ import { app } from "../app";
 import { studentRoutes } from "./student.route";
 import { subjectRoutes } from "./subject.route";
 import { attendanceRoutes } from "./attendance.route";
+import { calificationRoutes } from "./calification.route";
+
 const router = Router();
 
 // Cors Configuration
@@ -22,6 +24,8 @@ export function routeAPI() {
   router.use("/students", studentRoutes);
   router.use("/subjects", subjectRoutes);
   router.use("/attendance", attendanceRoutes);
+  router.use("/calification", calificationRoutes);
+
 
   app.use("/api", cors(corsOptions), router);
 }

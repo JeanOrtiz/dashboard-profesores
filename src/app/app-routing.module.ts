@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
-import { CalificacionesComponent } from "./calificaciones/calificaciones.component";
+import { CalificationsComponent } from "./calificaciones/calificaciones.component";
 import { SubjectsComponent } from "./subjects/subjects.component";
 import { AsistenciaComponent } from "./asistencia/asistencia.component";
 
@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: "grades",
-    component: CalificacionesComponent,
+    component: CalificationsComponent,
   },
   {
     path: "subjects",

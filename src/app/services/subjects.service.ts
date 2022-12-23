@@ -2,11 +2,24 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Subject } from "../interfaces/subject.interface";
 import { environment } from "../../environments/environment";
+import { Calification } from "../interfaces/calification.interface";
 
 @Injectable({
   providedIn: "root",
 })
 export class SubjectsService {
+  getCalification() {
+    throw new Error("Method not implemented.");
+  }
+  saveCalification(calification: Calification) {
+    throw new Error("Method not implemented.");
+  }
+  deleteCalification(id: string) {
+    throw new Error("Method not implemented.");
+  }
+  updateCalification(selectedID: string, calification: Calification) {
+    throw new Error("Method not implemented.");
+  }
   // Url of the API to work with.
   URL = environment.apiUrl;
   environ;
