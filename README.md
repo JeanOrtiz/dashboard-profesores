@@ -14,8 +14,8 @@ Dentro de la carpeta api utiliza `npm run dev`
 
 Hay que hacer un `npm install` dentro de la carpeta de Api al igual que en la carpeta source.
 
-Como se visualiza:
-
+Visualizacion del proyecto:
+![Image 12-23-22 at 5 13 AM](https://user-images.githubusercontent.com/66263033/209307809-b6b5a3af-7c49-424e-88de-6d56ce407de8.jpg)
 
 ![Image 12-14-22 at 11 41 AM](https://user-images.githubusercontent.com/66263033/207641560-6f480599-38a0-434d-8374-ee99d37c664c.jpg)
 ![Image 12-14-22 at 11 43 AM](https://user-images.githubusercontent.com/66263033/207641614-c91b34e8-b27c-40f4-b96d-70932810672d.jpg)
